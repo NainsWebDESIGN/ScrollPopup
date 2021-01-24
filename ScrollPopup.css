@@ -1,0 +1,156 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  color: #57b584;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0px;
+  padding-left: 0px;
+}
+ul li {
+  color: rgba(255, 255, 255, 0.7);
+}
+ul li span {
+  float: right;
+  margin-top: 9px;
+  font-size: 13px !important;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  display: inline-block;
+  text-align: center;
+  height: 30px;
+  font-weight: bold;
+  width: 30px;
+  line-height: 25px;
+  border-radius: 15px;
+}
+body {
+  padding: 0px 20px;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #3bb78f;
+  background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+}
+.flex {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.close {
+  outline: none;
+  background-color: transparent;
+  border: 0px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  transform: translateX(-60px) rotate(90deg);
+}
+.close.active {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  opacity: 1;
+  transform: translateX(0px) rotate(360deg);
+}
+.close .bar {
+  display: inline-block;
+  height: 2px;
+  width: 20px;
+  position: relative;
+  margin-bottom: 5px;
+  background-color: #56b37d;
+}
+.close .bar:nth-of-type(1) {
+  transform: rotate(45deg) translateY(9px);
+}
+.close .bar:nth-of-type(2) {
+  transform: rotate(-45deg) translateY(-9px);
+}
+.share {
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  overflow: hidden;
+  line-height: 50px;
+  border-radius: 25px;
+  position: relative;
+  background-color: #fff;
+  transition: width 285ms cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+    height 325ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  text-align: center;
+  box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.35);
+  color: #000;
+}
+.share .toggle {
+  display: block;
+  width: 100%;
+}
+.share.active {
+  width: 350px;
+  height: 300px;
+  transition: width 285ms cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+    height 325ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  box-shadow: 0px 5px 3px 4px rgba(0, 0, 0, 0.25);
+}
+.share.active .content {
+  opacity: 1;
+  transform-origin: center center;
+  height: 250px;
+  transform: scale(1, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+.share.active .content .text {
+  transition-delay: 0.6s;
+  opacity: 1;
+  transform: translateY(0px);
+}
+.share.active .toggle span {
+  transform: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  transform: translateX(-128px);
+}
+.share span {
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+.share .content {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  width: 100%;
+  height: 0px;
+  padding: 10px 30px;
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+  transform: scale(1, 0);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.share .content .text {
+  transition: 360ms all;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.share .content .text .sharelink {
+  transform: 300ms all;
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  text-align: center;
+  border-radius: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
